@@ -1,5 +1,5 @@
 
-const svr = "http://localhost/local_ocr/";
+const svr = "http://localhost/ocr_relay_svr/";
 
 var control_result = new Vue({
 	el: "#result_area",
