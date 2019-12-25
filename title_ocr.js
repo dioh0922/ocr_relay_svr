@@ -24,7 +24,11 @@ function load_local_Image(e){
 		return;
 	}
 
-	$("#send_crop_btn").hide();
+	if(crop_obj != null){
+		crop_obj.destroy();
+	}
+
+	$("#img_preview").empty();
 
 	control_result.text = "タイトル部分を選択してください";
 
@@ -32,17 +36,22 @@ function load_local_Image(e){
 		src: "",
 		id: "prev_src",
 		alt: "",
-	}).prependTo("#img_preview");
+	}).appendTo("#img_preview");
 
-	$("#send_crop_btn").show();
+
+	$("<input>").attr({
+		type: "button",
+		id: "send_crop_btn",
+		value: "選択完了",
+		class: "btn btn-success",
+		style: "margin-top: 10px;",
+	}).appendTo("#img_preview");
+
+	$(document).on("click", "#send_crop_btn", send_crop_img_to_api);
 
 
 	let formdata = new FormData($("#img_form").get(0));
 	let src = window.URL.createObjectURL(file);
-
-	if(crop_obj != null){
-		crop_obj.destroy();
-	}
 
 	$("#prev_src").attr("src", src);
 	$("#prev_src").ready(function(){
@@ -62,7 +71,7 @@ function send_crop_img_to_api(){
 		formdata.append("upload_img", blob);
 		$.ajax({
 			type: "POST",
-			url: svr + "get_area_api.php",
+			url: svr + "get_title_api.php",
 			cacha:false,
 			contentType: false,
 			processData: false,
@@ -71,7 +80,8 @@ function send_crop_img_to_api(){
 		})
 		.done(function(ajax_data){
 			//現状はOCRサーバでは文字列の抽出のみ行うため、結果表示のみ
-			control_result.text = ajax_data;
+			control_result.text = "「" + ajax_data + "」でした";
+			get_img_result_word(ajax_data);
 		})
 		.fail(function(){
 			control_result.text = "OCRサーバへの通信が失敗しました。";
@@ -79,10 +89,7 @@ function send_crop_img_to_api(){
 	}, "image/jpeg"); //jpeg形式にする(toBlob()そのままだとpngになる)
 }
 
-function get_img_title(){
-
-	var formdata = new FormData($("#img_form").get(0));
-
+function get_img_result_word(txt){
 	$.ajax({
 		type: "POST",
 		url: svr + "get_area_api.php",
@@ -94,12 +101,10 @@ function get_img_title(){
 	})
 	.done(function(ajax_data){
 		//現状はOCRサーバでは文字列の抽出のみ行うため、結果表示のみ
-		control_result.text = ajax_data;
 	})
 	.fail(function(){
 		control_result.text = "OCRサーバへの通信が失敗しました。";
 	});
-
 }
 
 //起動時の処理

@@ -7,7 +7,7 @@
 
 	$file = file_get_contents($file_name);
 
-	$url = "https://dioh09-herokutest.herokuapp.com/get_title_api.php";
+	$url = "https://dioh09-herokutest.herokuapp.com/get_area_api.php";
 
 	$curl = curl_init();
 	$cfile = new CURLFile($file_name, "image/jpeg", "upload_img");
