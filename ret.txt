@@ -1,0 +1,105 @@
+{
+ "kind": "customsearch#search",
+ "url": {
+  "type": "application/json",
+  "template": "https://www.googleapis.com/customsearch/v1?q={searchTerms}&num={count?}&start={startIndex?}&lr={language?}&safe={safe?}&cx={cx?}&sort={sort?}&filter={filter?}&gl={gl?}&cr={cr?}&googlehost={googleHost?}&c2coff={disableCnTwTranslation?}&hq={hq?}&hl={hl?}&siteSearch={siteSearch?}&siteSearchFilter={siteSearchFilter?}&exactTerms={exactTerms?}&excludeTerms={excludeTerms?}&linkSite={linkSite?}&orTerms={orTerms?}&relatedSite={relatedSite?}&dateRestrict={dateRestrict?}&lowRange={lowRange?}&highRange={highRange?}&searchType={searchType}&fileType={fileType?}&rights={rights?}&imgSize={imgSize?}&imgType={imgType?}&imgColorType={imgColorType?}&imgDominantColor={imgDominantColor?}&alt=json"
+ },
+ "queries": {
+  "request": [
+   {
+    "title": "Google Custom Search - ブライトバーン/恐怖の拡",
+    "totalResults": "416000",
+    "searchTerms": "ブライトバーン/恐怖の拡",
+    "count": 3,
+    "startIndex": 1,
+    "inputEncoding": "utf8",
+    "outputEncoding": "utf8",
+    "safe": "off",
+    "cx": "003703896859539832653:lan5nejsmye",
+    "searchType": "image"
+   }
+  ],
+  "nextPage": [
+   {
+    "title": "Google Custom Search - ブライトバーン/恐怖の拡",
+    "totalResults": "416000",
+    "searchTerms": "ブライトバーン/恐怖の拡",
+    "count": 3,
+    "startIndex": 4,
+    "inputEncoding": "utf8",
+    "outputEncoding": "utf8",
+    "safe": "off",
+    "cx": "003703896859539832653:lan5nejsmye",
+    "searchType": "image"
+   }
+  ]
+ },
+ "context": {
+  "title": "Google"
+ },
+ "searchInformation": {
+  "searchTime": 0.532611,
+  "formattedSearchTime": "0.53",
+  "totalResults": "416000",
+  "formattedTotalResults": "416,000"
+ },
+ "items": [
+  {
+   "kind": "customsearch#result",
+   "title": "映画『ブライトバーン／恐怖の拡散者』公式 (@BrightburnJP) | Twitter",
+   "htmlTitle": "映画『\u003cb\u003eブライトバーン\u003c/b\u003e／\u003cb\u003e恐怖\u003c/b\u003eの拡散者』公式 (@BrightburnJP) | Twitter",
+   "link": "https://pbs.twimg.com/profile_images/1178968123606614016/85IBvCXj_400x400.jpg",
+   "displayLink": "twitter.com",
+   "snippet": "映画『ブライトバーン／恐怖の拡散者』公式 (@BrightburnJP) | Twitter",
+   "htmlSnippet": "映画『\u003cb\u003eブライトバーン\u003c/b\u003e／\u003cb\u003e恐怖\u003c/b\u003eの拡散者』公式 (@BrightburnJP) | Twitter",
+   "mime": "image/jpeg",
+   "image": {
+    "contextLink": "https://twitter.com/brightburnjp",
+    "height": 400,
+    "width": 400,
+    "byteSize": 30467,
+    "thumbnailLink": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvkKYE016gNzdE3S_j0nWMbtOBc9vWqTZhyrtKiRgvcgqjYMzwlhXzGK8&s",
+    "thumbnailHeight": 124,
+    "thumbnailWidth": 124
+   }
+  },
+  {
+   "kind": "customsearch#result",
+   "title": "twitter懸賞】映画『ブライトバーン 恐怖の拡散者』劇場鑑賞券を10名様 ...",
+   "htmlTitle": "twitter懸賞】映画『\u003cb\u003eブライトバーン 恐怖\u003c/b\u003eの拡散者』劇場鑑賞券を10名様 ...",
+   "link": "https://hiscore.heartrails-capture.com/400x333/border?https://www.knshow.com/rd/?k=3f9aaeed9x4wk4g0",
+   "displayLink": "www.knshow.com",
+   "snippet": "twitter懸賞】映画『ブライトバーン 恐怖の拡散者』劇場鑑賞券を10名様 ...",
+   "htmlSnippet": "twitter懸賞】映画『\u003cb\u003eブライトバーン 恐怖\u003c/b\u003eの拡散者』劇場鑑賞券を10名様 ...",
+   "mime": "image/",
+   "image": {
+    "contextLink": "https://www.knshow.com/detail/3f9aaeed9x4wk4g0.html",
+    "height": 333,
+    "width": 400,
+    "byteSize": 34769,
+    "thumbnailLink": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDFG9hiPjTnKGPBSVdvlXtMRhYICRW8r5orAQ8m82_M0-EAhclRz1YRQQ&s",
+    "thumbnailHeight": 103,
+    "thumbnailWidth": 124
+   }
+  },
+  {
+   "kind": "customsearch#result",
+   "title": "ネタバレありレビュー】『ブライトバーン／恐怖の拡散者』“本家”への愛 ...",
+   "htmlTitle": "ネタバレありレビュー】『\u003cb\u003eブライトバーン\u003c/b\u003e／\u003cb\u003e恐怖\u003c/b\u003eの拡散者』“本家”への愛 ...",
+   "link": "https://fansvoice.jp/wp-content/uploads/2019/11/BB-PK-05_UJGP_08010_rv2.jpg",
+   "displayLink": "fansvoice.jp",
+   "snippet": "ネタバレありレビュー】『ブライトバーン／恐怖の拡散者』“本家”への愛 ...",
+   "htmlSnippet": "ネタバレありレビュー】『\u003cb\u003eブライトバーン\u003c/b\u003e／\u003cb\u003e恐怖\u003c/b\u003eの拡散者』“本家”への愛 ...",
+   "mime": "image/jpeg",
+   "image": {
+    "contextLink": "https://fansvoice.jp/2019/11/16/review-brightburn/",
+    "height": 1068,
+    "width": 1600,
+    "byteSize": 1060177,
+    "thumbnailLink": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdCJuNQD63ISLkTBmJfaoROFu10_zDqvWn-Cpq4p5-e7t3K1-b_ALaKdc&s",
+    "thumbnailHeight": 100,
+    "thumbnailWidth": 150
+   }
+  }
+ ]
+}

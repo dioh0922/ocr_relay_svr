@@ -90,24 +90,27 @@ function send_crop_img_to_api(){
 }
 
 function get_img_result_word(txt){
+	let post_data = {
+	};
+
+	post_data["search_word"] = txt;
+
 	$.ajax({
 		type: "POST",
-		url: svr + "get_area_api.php",
+		url: svr + "search_img_api.php",
 		cacha:false,
-		contentType: false,
-		processData: false,
-		data: formdata,
-		dataType: "html"
+		data: post_data,
 	})
 	.done(function(ajax_data){
 		//現状はOCRサーバでは文字列の抽出のみ行うため、結果表示のみ
+		console.log(ajax_data);
 	})
 	.fail(function(){
 		control_result.text = "OCRサーバへの通信が失敗しました。";
 	});
+
 }
 
 //起動時の処理
 (window.onload = function(){
-	//get_img_class();
 });
