@@ -7,8 +7,7 @@
 
 	$key = $setup_data_arr["key"];
 	$id = $setup_data_arr["id"];
-	$q = "劇場版 幼女戦記 映画";
-
+	$q = $_POST["search_word"];
 	$url = "https://www.googleapis.com/customsearch/v1?";
 
 	$p_arr = array(
@@ -28,7 +27,7 @@
 
 	foreach($ret_json["items"] as $iter){
 		$src = $iter["pagemap"]["cse_thumbnail"][0]["src"];
-		echo "<img src=".$src.">";
+		echo $src."\n";
 	}
 
 ?>

@@ -29,6 +29,7 @@ function load_local_Image(e){
 	}
 
 	$("#img_preview").empty();
+	$("#title_img_view").empty();
 
 	control_result.text = "タイトル部分を選択してください";
 
@@ -46,8 +47,6 @@ function load_local_Image(e){
 		class: "btn btn-success",
 		style: "margin-top: 10px;",
 	}).appendTo("#img_preview");
-
-	$(document).on("click", "#send_crop_btn", send_crop_img_to_api);
 
 
 	let formdata = new FormData($("#img_form").get(0));
@@ -97,13 +96,18 @@ function get_img_result_word(txt){
 
 	$.ajax({
 		type: "POST",
-		url: svr + "search_img_api.php",
+		url: svr + "search_img_crawler.php",
 		cacha:false,
 		data: post_data,
 	})
 	.done(function(ajax_data){
-		//現状はOCRサーバでは文字列の抽出のみ行うため、結果表示のみ
-		console.log(ajax_data);
+		let src_arr = ajax_data.split("\n");
+		for(let i = 0; i < src_arr.length; i++){
+			$("<img>").attr({
+				src: src_arr[i],
+				style: "margin-left: 10px;"
+			}).appendTo("#title_img_view");
+		}
 	})
 	.fail(function(){
 		control_result.text = "OCRサーバへの通信が失敗しました。";
@@ -113,4 +117,5 @@ function get_img_result_word(txt){
 
 //起動時の処理
 (window.onload = function(){
+	$(document).on("click", "#send_crop_btn", send_crop_img_to_api);
 });
