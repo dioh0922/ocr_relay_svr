@@ -121,9 +121,10 @@ function get_img_src(){
 		for(let i = 0; i < src_arr.length - 1; i++){
 			$("<img>").attr({
 				src: src_arr[i],
-				style: "margin-left: 10px; margin-bottom: 10px; width:50%; height: 50%;"
+				style: "margin-left: 10px; margin-bottom: 10px; width:40%; height: 40%; display: inline-block; padding: 10px;"
 			}).appendTo("#title_img_view");
 		}
+		control_result.text = "画像を表示します";
 	})
 	.fail(function(){
 		control_result.text = "OCRサーバへの通信が失敗しました。";

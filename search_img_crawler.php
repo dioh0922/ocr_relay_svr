@@ -12,10 +12,12 @@
 	}
 	*/
 
+	$dir = "get_result/";
 	$f_list = glob($dir."*");
 	foreach ($f_list as $iter) {
 		$dist_name = mb_substr($iter, -5);
-		rename($iter, $dir.$target.$dist_name);
+		$trim_target = mb_substr($target, 0, 5);
+		rename($iter, $dir.$trim_target.$dist_name);
 	}
 
 	echo "画像を収集しています";
