@@ -101,13 +101,8 @@ function get_img_result_word(txt){
 		data: post_data,
 	})
 	.done(function(ajax_data){
-		let src_arr = ajax_data.split("\n");
-		for(let i = 0; i < src_arr.length; i++){
-			$("<img>").attr({
-				src: src_arr[i],
-				style: "margin-left: 10px;"
-			}).appendTo("#title_img_view");
-		}
+		control_result.text = ajax_data;
+		$(window).trigger("crawler_comp");
 	})
 	.fail(function(){
 		control_result.text = "OCRサーバへの通信が失敗しました。";
@@ -115,7 +110,28 @@ function get_img_result_word(txt){
 
 }
 
+function get_img_src(){
+	$.ajax({
+		type: "GET",
+		url: svr + "get_img_src_api.php",
+		cacha:false,
+	})
+	.done(function(ajax_data){
+		let src_arr = ajax_data.split("\n");
+		for(let i = 0; i < src_arr.length - 1; i++){
+			$("<img>").attr({
+				src: src_arr[i],
+				style: "margin-left: 10px; margin-bottom: 10px; width:50%; height: 50%;"
+			}).appendTo("#title_img_view");
+		}
+	})
+	.fail(function(){
+		control_result.text = "OCRサーバへの通信が失敗しました。";
+	});
+}
+
 //起動時の処理
 (window.onload = function(){
 	$(document).on("click", "#send_crop_btn", send_crop_img_to_api);
+	$(window).on("crawler_comp", get_img_src);
 });

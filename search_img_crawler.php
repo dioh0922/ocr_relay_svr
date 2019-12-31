@@ -1,22 +1,22 @@
 <?php
 	header('Content-Type: text/html; charset=UTF-8');
 
-	/*
-	$full = "python3 crawler.cgi ".$_POST["search_word"];
+	$target = $_POST["search_word"];
+
+	$full = "python crawler.cgi ".$target;
 	exec($full, $out);
 
+	/*
 	foreach($out as $iter){
 		echo $iter;
 	}
 	*/
 
-	$dir = "get_result/";
-
 	$f_list = glob($dir."*");
 	foreach ($f_list as $iter) {
-		echo $iter."<br>";
+		$dist_name = mb_substr($iter, -5);
+		rename($iter, $dir.$target.$dist_name);
 	}
 
-	//ディレクトリを全部見て、画像のパスを\n区切りで返す
-
+	echo "画像を収集しています";
 ?>
