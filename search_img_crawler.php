@@ -20,5 +20,10 @@
 		rename($iter, $dir.$trim_target.$dist_name);
 	}
 
-	echo "画像を収集しています";
+	if(count($f_list) <= 0){
+		echo 0;
+	}else{
+		echo 1;
+	}
+
 ?>

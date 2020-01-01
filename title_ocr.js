@@ -101,8 +101,12 @@ function get_img_result_word(txt){
 		data: post_data,
 	})
 	.done(function(ajax_data){
-		control_result.text = ajax_data;
-		$(window).trigger("crawler_comp");
+		if(ajax_data == 0){
+			control_result.text = "画像の収集に失敗しました";
+		}else{
+			control_result.text = "画像を収集しています";
+			$(window).trigger("crawler_comp");
+		}
 	})
 	.fail(function(){
 		control_result.text = "OCRサーバへの通信が失敗しました。";
