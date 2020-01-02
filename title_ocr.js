@@ -16,6 +16,7 @@ var control_file_select = new Vue({
 });
 
 var crop_obj = null;
+var detected_title = "";
 
 function load_local_Image(e){
 	let file = e.target.files[0];
@@ -78,8 +79,8 @@ function send_crop_img_to_api(){
 			dataType: "html"
 		})
 		.done(function(ajax_data){
-			//現状はOCRサーバでは文字列の抽出のみ行うため、結果表示のみ
-			control_result.text = "「" + ajax_data + "」でした";
+			detected_title = ajax_data;
+			control_result.text = "「" + detected_title + "」でした";
 			get_img_result_word(ajax_data);
 		})
 		.fail(function(){
@@ -128,7 +129,7 @@ function get_img_src(){
 				style: "margin-left: 10px; margin-bottom: 10px; width:40%; height: 40%; display: inline-block; padding: 10px;"
 			}).appendTo("#title_img_view");
 		}
-		control_result.text = "画像を表示します";
+		control_result.text = detected_title + "の画像を表示します";
 	})
 	.fail(function(){
 		control_result.text = "OCRサーバへの通信が失敗しました。";
