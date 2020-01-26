@@ -81,7 +81,10 @@ function send_crop_img_to_api(){
 		.done(function(ajax_data){
 			detected_title = ajax_data;
 			control_result.text = "「" + detected_title + "」でした";
-			get_img_result_word(ajax_data);
+			location.href = "http://google.co.jp/search?tbm=isch&q=" + detected_title;
+
+			//連続で収集すると保存できないため画像検索にしておく
+			//get_img_result_word(ajax_data);
 		})
 		.fail(function(){
 			control_result.text = "OCRサーバへの通信が失敗しました。";
