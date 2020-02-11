@@ -81,10 +81,10 @@ function send_crop_img_to_api(){
 		.done(function(ajax_data){
 			detected_title = ajax_data;
 			control_result.text = "「" + detected_title + "」でした";
-			location.href = "http://google.co.jp/search?tbm=isch&q=" + detected_title;
+			//location.href = "http://google.co.jp/search?tbm=isch&q=" + detected_title;
 
 			//連続で収集すると保存できないため画像検索にしておく
-			//get_img_result_word(ajax_data);
+			get_img_result_word(ajax_data);
 		})
 		.fail(function(){
 			control_result.text = "OCRサーバへの通信が失敗しました。";
@@ -108,8 +108,15 @@ function get_img_result_word(txt){
 		if(ajax_data == 0){
 			control_result.text = "画像の収集に失敗しました";
 		}else{
-			control_result.text = "画像を収集しています";
-			$(window).trigger("crawler_comp");
+			let src_arr = ajax_data.split("<br>");
+			for(let i = 0; i < src_arr.length - 1; i++){
+				$("<img>").attr({
+					src: src_arr[i],
+					style: "margin-left: 10px; margin-bottom: 10px; width:40%; height: 40%; display: inline-block; padding: 10px;"
+				}).appendTo("#title_img_view");
+			}
+			control_result.text = detected_title + "の画像を表示します";
+			//$(window).trigger("crawler_comp");
 		}
 	})
 	.fail(function(){

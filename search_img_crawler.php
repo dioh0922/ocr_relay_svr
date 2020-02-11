@@ -3,15 +3,11 @@
 
 	$target = $_POST["search_word"];
 
-	$full = "python crawler.cgi ".$target;
+	//$full = "python crawler.cgi ".$target;
+	$full = "python get_sample_img_src.py ".$target;
 	exec($full, $out);
 
-	/*
-	foreach($out as $iter){
-		echo $iter;
-	}
-	*/
-
+/*
 	$dir = "get_result/";
 	$f_list = glob($dir."*");
 	foreach ($f_list as $iter) {
@@ -25,5 +21,9 @@
 	}else{
 		echo 1;
 	}
+*/
 
+	foreach($out as $val){
+		echo($val);
+	}
 ?>
